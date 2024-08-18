@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/FirstPlace.unity
+    guid: 2a5c3ac41729c0f4eadaec9665d916a6
+  - enabled: 0
+    path: Assets/Scenes/NetWorkCableScene.unity
+    guid: 490257982320b4370a4596da08a2fea7
+  - enabled: 1
+    path: Assets/Scenes/BookTable.unity
+    guid: db3d7c42998d20047a9f5791d422aafb
+  - enabled: 1
+    path: "Assets/Scenes/M\xE0n 1.unity"
+    guid: 1f155d53a3d99694ab1b5eeb95b88243
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: cf232c8d97ce78c489daaa7ce55eaa70,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 322974cb57a5f3147992ffa1c0f6ff62,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: c5a4e960dd588274b8545c8eb5e8eb92,
+      type: 2}
