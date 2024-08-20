@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 005ab0ae8aa7f74438a5fa50f7cd50e3
+guid: 4e49a01ac3769e041b25c010e3b29bd0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable:
@@ -161,7 +161,7 @@ ModelImporter:
     second: //RootNode
   - first:
       74: 7400000
-    second: r_hand_first
+    second: r_hand_index_finger
   - first:
       95: 9500000
     second: //RootNode
@@ -195,7 +195,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: r_hand_first
+      name: r_hand_index_finger
       takeName: Take 001
       internalID: 0
       firstFrame: 0
