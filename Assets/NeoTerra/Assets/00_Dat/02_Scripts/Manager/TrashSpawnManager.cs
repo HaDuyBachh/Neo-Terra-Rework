@@ -9,7 +9,7 @@ namespace Game.GameManager
         [SerializeField] private Transform _center;
         [SerializeField] private float _radius;
         [SerializeField] private int _trashSpawnCount = 3;
-        [SerializeField] private int _trashCount;
+        [SerializeField] private int _trashCanThrowCount;
         private void Awake()
         {
             if (Instance == null)
@@ -21,17 +21,17 @@ namespace Game.GameManager
                 Destroy(gameObject);
             }
 
-            _trashCount = FindObjectsOfType<Trash>().Length;
-            if (_trashCount == 0) SpawnTrashLine();
+            _trashCanThrowCount = FindObjectsOfType<Trash>().Length;
+            if (_trashCanThrowCount == 0) SpawnTrashLine();
         }
 
         public void ResetTrashManager()
         {
             foreach (var tr in FindObjectsOfType<Trash>())
             {
-                Destroy(tr.gameObject);
+                if (tr.enabled) Destroy(tr.gameObject);
             }
-            _trashCount = 0;
+            _trashCanThrowCount = 0;
             SpawnTrashLine();
         }
 
@@ -45,14 +45,14 @@ namespace Game.GameManager
             }
         }    
 
-        public void RemoveTrash()
+        public void RemoveTrashCanThrowCount()
         {
-            _trashCount--;
+            _trashCanThrowCount--;
         }    
         public void SpawnTrashLine()
         {
             var cnt = Random.Range(-2, _trashSpawnCount);
-            if (_trashCount == 0)
+            if (_trashCanThrowCount == 0)
             {
                 cnt = 8;
                 Debug.Log("đã hết rác đang, thêm mới ");
@@ -65,7 +65,7 @@ namespace Game.GameManager
                 Vector3 spawnPosition = _center.position + Random.Range(-_radius, _radius) * Vector3.left;
                 spawnPosition.y = _center.position.y + 1;
                 Instantiate(_trashPrefabs[Random.Range(0, _trashPrefabs.Length)], spawnPosition, Quaternion.identity);
-                _trashCount++;
+                _trashCanThrowCount++;
             }
         }
 

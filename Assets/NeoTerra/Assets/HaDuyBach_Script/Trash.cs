@@ -18,10 +18,23 @@ public class Trash : MonoBehaviour
     [SerializeField] public Texture2D trashImage;
     [SerializeField]
     public Type _type;
-    public int _point;
+    public int _point = 0;
+    public bool canThrow = true;
 
     public void OnDestroy()
     {
-        FindFirstObjectByType<Game.GameManager.TrashSpawnManager>().RemoveTrash();
+        if (canThrow)
+        {
+            canThrow = false;
+            FindFirstObjectByType<Game.GameManager.TrashSpawnManager>().RemoveTrashCanThrowCount();
+        }
+    }
+    public void OnDisable()
+    {
+        if (canThrow)
+        {
+            canThrow = false;
+            FindFirstObjectByType<Game.GameManager.TrashSpawnManager>().RemoveTrashCanThrowCount();
+        };
     }
 }

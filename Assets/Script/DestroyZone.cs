@@ -23,6 +23,24 @@ public class DestroyZone : MonoBehaviour
         }    
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.parent != null && collision.transform.parent.CompareTag("trash"))
+        {
+            StartCoroutine(DestroyAndSpawnNewtrash(collision.transform.parent.gameObject));
+        }
+        else
+        if (transform.CompareTag("trash"))
+        {
+            StartCoroutine(DestroyAndSpawnNewtrash(collision.transform.gameObject));
+        }
+        else
+        if (collision.transform.CompareTag("player"))
+        {
+            collision.transform.position = StandPlace.position;
+        }
+    }
+
     private IEnumerator DestroyAndSpawnNewtrash(GameObject obj)
     {
         obj.tag = "Untagged";

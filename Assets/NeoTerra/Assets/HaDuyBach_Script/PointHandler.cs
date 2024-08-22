@@ -17,7 +17,7 @@ public class PointHandler : MonoBehaviour
     }
     public void UpdatePoint(int p)
     {
-        _point += p*30;
+        _point += p;
         _point = Mathf.Min(_point, 100);
         if (_point == 100)
         {
