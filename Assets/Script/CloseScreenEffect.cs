@@ -1,0 +1,109 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class CloseScreenEffect : MonoBehaviour
+{
+    [SerializeField]
+    private List<RectTransform> target;
+    private List<Vector3> originScale;
+    [SerializeField]
+    private List<GameObject> obj;
+    [SerializeField]
+    private bool isClose = false;
+    [SerializeField]
+    private bool isOpen = false;
+    [SerializeField]
+    private bool first = false;
+    private void Start()
+    {
+        originScale = new();
+        for (int i = 0; i < target.Count; i++)
+        {
+            originScale.Add(target[i].localScale);
+        }
+
+        //StartCoroutine(StartAfter(5));
+    }
+
+    IEnumerator StartAfter(float time)
+    {
+        Close();
+        yield return new WaitForSeconds(time);
+        Open();
+    }    
+
+    public void Close()
+    {
+        isClose = true;
+        isOpen = false;
+        first = true;
+    }
+    public void Open()
+    {
+        isClose = false;
+        isOpen = true;
+        first = true;
+    }
+    public void Update()
+    {
+        if (isClose)
+            Closing();
+        if (isOpen)
+            Opening();
+    }
+    private void Closing()
+    {
+        if (first)
+        {
+            foreach (var _o in obj) _o.SetActive(false);
+            first = false;
+        }
+
+        isClose = false;
+        for (int i = 0; i < target.Count; i++)
+        {
+            var sc = target[i].localScale;
+            sc = Vector3.Lerp(sc, new Vector3(sc.x, 0, sc.z), 8 * Time.deltaTime);
+
+            if (Mathf.Abs((sc - new Vector3(sc.x, 0, sc.z)).magnitude) < 0.001f)
+            {
+                target[i].gameObject.SetActive(false);
+                sc = new Vector3(sc.x, 0, sc.z);
+            }
+            else
+            {
+                isClose = true;
+            }
+            target[i].localScale = sc;
+        }
+    }    
+    private void Opening()
+    {
+        if (first)
+        {
+            foreach (var _t in target) _t.gameObject.SetActive(true);
+        }
+
+        isOpen = false;
+        for (int i = 0; i < target.Count; i++)
+        {
+            var sc = target[i].localScale;
+            sc = Vector3.Lerp(sc, originScale[i], 8 * Time.deltaTime);
+
+            if (Mathf.Abs((sc - originScale[i]).magnitude) < 0.001f)
+            {
+                sc = originScale[i];
+            }
+            else
+            {
+                isOpen = true;
+            }
+
+            target[i].localScale = sc;
+        }
+
+        if (!isOpen) foreach (var _o in obj) _o.SetActive(true);
+    }    
+}

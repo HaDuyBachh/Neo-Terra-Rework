@@ -7,12 +7,9 @@ TagManager:
   - button
   - Hand
   - Head
-  - Box
-  - DayMangDaTuot
-  - DayMang
-  - ViTriCatDayMang
   - trash
   - player
+  - trashIcon
   layers:
   - Default
   - TransparentFX

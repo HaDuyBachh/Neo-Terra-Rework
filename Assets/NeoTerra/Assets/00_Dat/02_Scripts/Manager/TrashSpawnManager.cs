@@ -69,19 +69,19 @@ namespace Game.GameManager
             }
         }
 
-#if UNITY_EDITOR
-        [ContextMenu("Load Trash")]
-        public void LoadTrash()
-        {
-            string[] prefabGUIDs = UnityEditor.AssetDatabase.FindAssets("t:Prefab", new string[] { _trashPath });
-            _trashPrefabs = new GameObject[prefabGUIDs.Length];
-            for (int i = 0; i < prefabGUIDs.Length; i++)
-            {
-                string path = UnityEditor.AssetDatabase.GUIDToAssetPath(prefabGUIDs[i]);
-                _trashPrefabs[i] = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(path);
-            }
-        }
-#endif
+//#if UNITY_EDITOR
+//        [ContextMenu("Load Trash")]
+//        public void LoadTrash()
+//        {
+//            string[] prefabGUIDs = UnityEditor.AssetDatabase.FindAssets("t:Prefab", new string[] { _trashPath });
+//            _trashPrefabs = new GameObject[prefabGUIDs.Length];
+//            for (int i = 0; i < prefabGUIDs.Length; i++)
+//            {
+//                string path = UnityEditor.AssetDatabase.GUIDToAssetPath(prefabGUIDs[i]);
+//                _trashPrefabs[i] = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(path);
+//            }
+//        }
+//#endif
 
     }
 }
