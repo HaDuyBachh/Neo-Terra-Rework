@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class CanIconControl : MonoBehaviour
 {
+    public Trash.Type Type { get { return type; } }
+
     [SerializeField]
-    private List<GameObject> trashIcon;
+    private List<GameObject> trashIcon = new();
+    [SerializeField]
+    private Trash.Type type;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -23,8 +27,18 @@ public class CanIconControl : MonoBehaviour
         }
     }
 
-    public bool CheckCorrectSort()
+    public int CheckCorrectSort()
     {
-        return false;
+        var cnt = 0;
+        foreach (var trI in trashIcon)
+        {
+            if (trI.GetComponent<TrashIconControl>().Type == type) cnt++;
+            else
+            {
+                cnt = -1;
+                return cnt;
+            }    
+        }
+        return cnt;
     }    
 }

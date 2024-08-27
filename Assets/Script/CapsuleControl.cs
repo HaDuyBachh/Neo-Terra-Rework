@@ -89,6 +89,12 @@ public class CapsuleControl : MonoBehaviour
         }
     }
 
+    public void SetUpCapsuleType(Trash.Type type)
+    {
+        this.type = type;
+        UpdateMaterial((int)type);
+    }    
+
     /// <summary>
     /// Cập nhật Material của capsule
     /// </summary>
