@@ -358,3 +358,4 @@ MonoBehaviour:
   trashImage: {fileID: 2800000, guid: faec407c024135d4ab9f2eed299ef628, type: 3}
   _type: 2
   _point: 2
+  canThrow: 1

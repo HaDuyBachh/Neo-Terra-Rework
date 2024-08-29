@@ -31,7 +31,6 @@ public class CapsuleControl : MonoBehaviour
         var p = other.transform.parent;
         if (p != null && p.gameObject.CompareTag("trash"))
         {
-
             p.GetComponent<Rigidbody>().useGravity = false;
             p.GetComponent<Rigidbody>().velocity = Vector3.zero;
             p.GetComponentInChildren<Collider>().enabled = false;
