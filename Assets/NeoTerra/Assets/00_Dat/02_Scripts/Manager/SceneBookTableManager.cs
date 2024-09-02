@@ -38,7 +38,7 @@ namespace Game.GameManager{
 
         private IEnumerator ActiveBehaviourPanel(){
             yield return new WaitForSeconds(8f);
-            _behaviourPanel.SetActive(true);
+            //_behaviourPanel.SetActive(true);
         }
 
         public void OpenGameplayScene(){
