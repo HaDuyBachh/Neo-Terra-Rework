@@ -31,5 +31,11 @@ namespace Game.Manager {
         public Trash.Type GetTopTrash(){
             return npcSO.npcGroup.queue.Peek().Data._type;
         }
+
+        public void OnClickTrashCan(Trashcan trashcan){
+            if (trashcan._trashcanType == GetTopTrash()){
+                npcSO.npcGroup.MoveTopNPCToTrashCan(trashcan);
+            }
+        }
     }
 }

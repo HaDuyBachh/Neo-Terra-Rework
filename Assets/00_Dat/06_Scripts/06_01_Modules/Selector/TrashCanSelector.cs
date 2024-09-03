@@ -39,7 +39,6 @@ namespace Selector
                 // Xử lý khi raycast trúng một đối tượng
                 if (hit.collider.gameObject.CompareTag("trashAndCanIcon"))
                 {
-                    if (_currentTrashCan != null) return;
                     _currentTrashCan = hit.collider.gameObject.transform.parent.parent;
                     _currentTrashCan.GetComponent<Outline>().enabled = true;
                     return;
@@ -72,7 +71,8 @@ namespace Selector
 
         private void OnClick(){
             if (_currentTrashCan != null){
-                Debug.Log("Trash Can Selected " + _currentTrashCan.GetComponent<Trashcan>()._trashcanType + " " + Chapter3Manager.Instance.GetTopTrash());
+                //Debug.Log("Trash Can Selected " + _currentTrashCan.GetComponent<Trashcan>()._trashcanType + " " + Chapter3Manager.Instance.GetTopTrash());
+                Chapter3Manager.Instance.OnClickTrashCan(_currentTrashCan.GetComponent<Trashcan>());
             }
         }
     }

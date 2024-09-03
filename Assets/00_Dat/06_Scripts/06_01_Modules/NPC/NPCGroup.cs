@@ -34,5 +34,11 @@ namespace NPC{
                 }
             }
         }
+
+        public void MoveTopNPCToTrashCan(Trashcan can){
+            var npc = Dequeue();
+            Debug.Log(queue.Count);
+            npc.MoveTo(can.standPivot.position);
+        }
     }
 }
