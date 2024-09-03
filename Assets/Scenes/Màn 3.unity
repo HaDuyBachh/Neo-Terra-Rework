@@ -1052,6 +1052,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: metal_trash
       objectReference: {fileID: 0}
+    - target: {fileID: 142190746744648754, guid: f2561b6f8a804a54eb969a5ffcababcb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 432609869900647890, guid: f2561b6f8a804a54eb969a5ffcababcb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629891278401439619, guid: f2561b6f8a804a54eb969a5ffcababcb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093242987963596937, guid: f2561b6f8a804a54eb969a5ffcababcb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615179796510471969, guid: f2561b6f8a804a54eb969a5ffcababcb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
     - target: {fileID: 6584713049750890756, guid: f2561b6f8a804a54eb969a5ffcababcb,
         type: 3}
       propertyPath: m_RootOrder
@@ -1106,6 +1131,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183997465408751203, guid: f2561b6f8a804a54eb969a5ffcababcb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7301534930650032443, guid: f2561b6f8a804a54eb969a5ffcababcb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891859702702612701, guid: f2561b6f8a804a54eb969a5ffcababcb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3825,6 +3865,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: trashcan_bio
       objectReference: {fileID: 0}
+    - target: {fileID: 432609869900647890, guid: d21e85be7862d40458298447d95bda7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629891278401439619, guid: d21e85be7862d40458298447d95bda7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290166083701741499, guid: d21e85be7862d40458298447d95bda7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889746514590856763, guid: d21e85be7862d40458298447d95bda7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188571501786681918, guid: d21e85be7862d40458298447d95bda7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195606101679359623, guid: d21e85be7862d40458298447d95bda7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293431942781058710, guid: d21e85be7862d40458298447d95bda7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
     - target: {fileID: 6584713049750890756, guid: d21e85be7862d40458298447d95bda7f,
         type: 3}
       propertyPath: m_RootOrder
@@ -3879,6 +3954,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207606679046504767, guid: d21e85be7862d40458298447d95bda7f,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16016,6 +16096,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: trashcan (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 432609869900647890, guid: 714cde2629197924aa3c53ad2a663184,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293693639706197268, guid: 714cde2629197924aa3c53ad2a663184,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552474246967420286, guid: 714cde2629197924aa3c53ad2a663184,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629891278401439619, guid: 714cde2629197924aa3c53ad2a663184,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350822114265477398, guid: 714cde2629197924aa3c53ad2a663184,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839360019481542611, guid: 714cde2629197924aa3c53ad2a663184,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
     - target: {fileID: 6584713049750890756, guid: 714cde2629197924aa3c53ad2a663184,
         type: 3}
       propertyPath: m_RootOrder
@@ -16070,6 +16180,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884825476783381034, guid: 714cde2629197924aa3c53ad2a663184,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469913909463047178, guid: 714cde2629197924aa3c53ad2a663184,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22010,10 +22130,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2021938148}
     m_Modifications:
+    - target: {fileID: 1029376149779636957, guid: 51b15acc60db5f54395655e31afbb5dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058522333983294471, guid: 51b15acc60db5f54395655e31afbb5dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
     - target: {fileID: 2179983430220545499, guid: 51b15acc60db5f54395655e31afbb5dd,
         type: 3}
       propertyPath: m_Name
       value: trashcan_plastic
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387733566592392255, guid: 51b15acc60db5f54395655e31afbb5dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430052201754447256, guid: 51b15acc60db5f54395655e31afbb5dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311240949095807828, guid: 51b15acc60db5f54395655e31afbb5dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
       objectReference: {fileID: 0}
     - target: {fileID: 7802348900678504849, guid: 51b15acc60db5f54395655e31afbb5dd,
         type: 3}
@@ -22069,6 +22214,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189390026701392475, guid: 51b15acc60db5f54395655e31afbb5dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8640138494988010173, guid: 51b15acc60db5f54395655e31afbb5dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935734489075550388, guid: 51b15acc60db5f54395655e31afbb5dd,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28030,6 +28190,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: glass_trash
       objectReference: {fileID: 0}
+    - target: {fileID: 432609869900647890, guid: 70fc0f1b1855d6f4bb98eeb8bd9e6ffb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629891278401439619, guid: 70fc0f1b1855d6f4bb98eeb8bd9e6ffb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005018919944256612, guid: 70fc0f1b1855d6f4bb98eeb8bd9e6ffb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491515720504216586, guid: 70fc0f1b1855d6f4bb98eeb8bd9e6ffb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
     - target: {fileID: 6584713049750890756, guid: 70fc0f1b1855d6f4bb98eeb8bd9e6ffb,
         type: 3}
       propertyPath: m_RootOrder
@@ -28084,6 +28264,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587537246340683798, guid: 70fc0f1b1855d6f4bb98eeb8bd9e6ffb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622584368231071502, guid: 70fc0f1b1855d6f4bb98eeb8bd9e6ffb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050863248956187971, guid: 70fc0f1b1855d6f4bb98eeb8bd9e6ffb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944083180098879442, guid: 70fc0f1b1855d6f4bb98eeb8bd9e6ffb,
+        type: 3}
+      propertyPath: m_TagString
+      value: trashAndCanIcon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34174,7 +34374,7 @@ GameObject:
   - component: {fileID: 2021938148}
   m_Layer: 0
   m_Name: TrashCan
-  m_TagString: Untagged
+  m_TagString: trashAndCanIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
