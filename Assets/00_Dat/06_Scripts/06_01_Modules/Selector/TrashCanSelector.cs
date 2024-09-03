@@ -1,3 +1,4 @@
+using Game.Manager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,15 @@ namespace Selector
         public GameObject handPivot;
 
         private Transform _currentTrashCan;
+
+        private InputAction _selectAction;
+
+        private void Awake()
+        {
+            _selectAction = new InputAction("select", binding: "<Mouse>/leftButton");
+            _selectAction.Enable();
+            _selectAction.performed += ctx => OnClick();
+        }
 
         public void Update()
         {
@@ -57,6 +67,12 @@ namespace Selector
                     return new Ray(handPivot.transform.position, handPivot.transform.forward);
                 default:
                     return new Ray();
+            }
+        }
+
+        private void OnClick(){
+            if (_currentTrashCan != null){
+                Debug.Log("Trash Can Selected " + _currentTrashCan.GetComponent<Trashcan>()._trashcanType + " " + Chapter3Manager.Instance.GetTopTrash());
             }
         }
     }
