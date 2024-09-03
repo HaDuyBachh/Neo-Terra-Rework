@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Modules.Selector
+namespace Selector
 {
     public enum SelectorType
     {
