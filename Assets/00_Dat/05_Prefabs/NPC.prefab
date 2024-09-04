@@ -426,7 +426,7 @@ Transform:
   - {fileID: 7068708544260558566}
   - {fileID: 6708223598467713700}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1955146980731913046
 Animator:
@@ -485,6 +485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 8806370487065928145}
   _unitCanvas: {fileID: 3388332874020553550}
+  _trashImage: {fileID: 576243632555737735}
 --- !u!1 &8488390614521542852
 GameObject:
   m_ObjectHideFlags: 0

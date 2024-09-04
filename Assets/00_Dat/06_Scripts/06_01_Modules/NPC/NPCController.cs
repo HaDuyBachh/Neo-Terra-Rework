@@ -30,12 +30,14 @@ namespace NPC
         public void Despawn()
         {
             _npcSO.DespawnObject(gameObject);
+            _npcSO.Spawn();
         }
 
-        public void MoveTo(Vector3 position, Action completeMovingCallback = null)
+        public void MoveTo(Vector3 position, Action completeMovingCallback = null, Action startMovingCallback = null)
         {
             _agent.SetDestination(position);
             _onCompleteMoving = completeMovingCallback;
+            startMovingCallback?.Invoke();
         }
 
         public void Update(){
@@ -43,6 +45,17 @@ namespace NPC
                 _onCompleteMoving.Invoke();
                 _onCompleteMoving = null;
             }
+        }
+
+        public void ShowUnitCanvas()
+        {
+            _unitCanvas.SetActive(true);
+            Sprite sprite = Sprite.Create(_data.trashImage, new Rect(0, 0, _data.trashImage.width, _data.trashImage.height), new Vector2(0.5f, 0.5f));
+            _trashImage.sprite = sprite;
+        }
+
+        public void HideUnitCanvas(){
+            _unitCanvas.SetActive(false);
         }
 
         public Trash Data => _data;
