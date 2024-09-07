@@ -426,7 +426,7 @@ Transform:
   - {fileID: 7068708544260558566}
   - {fileID: 6708223598467713700}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1955146980731913046
 Animator:
@@ -437,7 +437,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7626552396100986868}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1fa749155cc8a28469e2f7f4eed60ee0, type: 3}
+  m_Avatar: {fileID: 9000000, guid: d96aa9082b4fdd747abaffb3523fdf70, type: 3}
   m_Controller: {fileID: 9100000, guid: 365bfd00c44eed447841dbb9072d67ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -486,6 +486,7 @@ MonoBehaviour:
   _agent: {fileID: 8806370487065928145}
   _unitCanvas: {fileID: 3388332874020553550}
   _trashImage: {fileID: 576243632555737735}
+  _animator: {fileID: 1955146980731913046}
 --- !u!1 &8488390614521542852
 GameObject:
   m_ObjectHideFlags: 0

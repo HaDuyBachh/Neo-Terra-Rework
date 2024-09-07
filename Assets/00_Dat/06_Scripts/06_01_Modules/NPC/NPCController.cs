@@ -11,6 +11,8 @@ namespace NPC
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private GameObject _unitCanvas;
         [SerializeField] private Image _trashImage;
+        [SerializeField] private Animator _animator;
+
         private Trash _data;
         private NPCGroup _group;
         private Action _onCompleteMoving;
@@ -25,6 +27,9 @@ namespace NPC
             _data = _so.trashDatas.trashes[UnityEngine.Random.Range(0, _so.trashDatas.trashes.Length)];
             _unitCanvas.SetActive(false);
             _agent.Warp(position);
+
+            _animator.SetBool("IsMove", false);
+            _animator.SetBool("IsIdle", true);
         }
 
         public void Despawn()
@@ -38,11 +43,17 @@ namespace NPC
             _agent.SetDestination(position);
             _onCompleteMoving = completeMovingCallback;
             startMovingCallback?.Invoke();
+            _animator.SetBool("IsMove", true);
+            _animator.SetBool("IsIdle", false);
         }
 
-        public void Update(){
-            if(_agent.remainingDistance <= _agent.stoppingDistance && _onCompleteMoving != null){
-                _onCompleteMoving.Invoke();
+        public void Update()
+        {
+            if (_agent.remainingDistance <= _agent.stoppingDistance)
+            {
+                _animator.SetBool("IsMove", false);
+                _animator.SetBool("IsIdle", true);
+                _onCompleteMoving?.Invoke();
                 _onCompleteMoving = null;
             }
         }
@@ -54,7 +65,8 @@ namespace NPC
             _trashImage.sprite = sprite;
         }
 
-        public void HideUnitCanvas(){
+        public void HideUnitCanvas()
+        {
             _unitCanvas.SetActive(false);
         }
 
