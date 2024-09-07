@@ -1736,7 +1736,7 @@ GameObject:
   - component: {fileID: 108501005}
   - component: {fileID: 108501004}
   - component: {fileID: 108501003}
-  - component: {fileID: 108501002}
+  - component: {fileID: 108501006}
   m_Layer: 0
   m_Name: Right Hand Model
   m_TagString: Untagged
@@ -1763,18 +1763,6 @@ Transform:
   m_Father: {fileID: 501291050}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!114 &108501002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108501000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79757fe7fa06a548a2f182e58e60175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &108501003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1840,6 +1828,110 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &108501006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108501000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e4d768f3541324098a818264562a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Active
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 05c1cf83-5344-40aa-90c4-af696adf76b7
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  selectAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Select
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 90f74239-f8e9-4fce-86a8-f4670d1322a7
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  turnAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Turn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 844c3e16-f9c9-465e-8eb4-fe63681ac1a5
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  primaryButtonAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Primary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 17d3f761-f52e-4e73-916a-f5e33028ce46
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6611717829190533235, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  secondaryButtonAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Secondary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: ddc9ac41-324a-4420-9aeb-e50c9c748064
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 7574881101797424546, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  primaryPressEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  secondaryPressEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  activePressEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1626797194}
+        m_TargetAssemblyTypeName: Selector.TrashCanSelector, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  selectPressEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  snapTurnEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &115246454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,7 +3032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &397336482
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6215,7 +6307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!208 &698739803
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6620,7 +6712,7 @@ GameObject:
   - component: {fileID: 725385377}
   - component: {fileID: 725385376}
   - component: {fileID: 725385375}
-  - component: {fileID: 725385374}
+  - component: {fileID: 725385378}
   m_Layer: 0
   m_Name: Left Hand Model
   m_TagString: Untagged
@@ -6645,18 +6737,6 @@ Transform:
   m_Father: {fileID: 886557882}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &725385374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725385372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79757fe7fa06a548a2f182e58e60175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &725385375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6722,6 +6802,98 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &725385378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725385372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e4d768f3541324098a818264562a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Active
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 47ec47e4-60a9-4520-99f5-3c3aff3c1c22
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  selectAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Select
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: ad142105-eac9-4866-a4fa-b5394f22a02f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  turnAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Turn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 4c52237d-c889-4919-8ce1-51d3a38a46a3
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  primaryButtonAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Primary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 1b83b226-a919-4dee-af6b-fb23493f19ed
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -8199965664875291712, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  secondaryButtonAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Secondary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: c306edec-25a7-41e3-a9be-846415ad6d70
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -7357084703139621168, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  primaryPressEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  secondaryPressEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  activePressEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  selectPressEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  snapTurnEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &753860672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9087,7 +9259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   line: {fileID: 1260972419}
   lineOrigin: {fileID: 1260972417}
-  handInput: {fileID: 108501002}
+  handInput: {fileID: 108501006}
   lineCastMode: 0
   mode:
   - {fileID: 2100000, guid: 498c3a67860709845abc5a907319d5c5, type: 2}
@@ -11041,8 +11213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa81f5d55fa7ed84d9b4e5d8a1cdf86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectorType: 0
-  handPivot: {fileID: 0}
+  selectorType: 1
+  handPivot: {fileID: 108501000}
+  lineRenderer: {fileID: 1260972419}
+  _rightHand: {fileID: 108501006}
 --- !u!1 &1636616107
 GameObject:
   m_ObjectHideFlags: 0

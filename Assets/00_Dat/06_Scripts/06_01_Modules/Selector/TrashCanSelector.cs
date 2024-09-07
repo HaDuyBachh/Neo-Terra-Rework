@@ -15,16 +15,18 @@ namespace Selector
         public SelectorType selectorType;
         [Header("By Hand")]
         public GameObject handPivot;
-
+        public LineRenderer lineRenderer;
         private Transform _currentTrashCan;
 
         private InputAction _selectAction;
 
+        public HandInputValue _rightHand;
+
         private void Awake()
         {
-            _selectAction = new InputAction("select", binding: "<Mouse>/leftButton");
+            _selectAction = new InputAction( );
             _selectAction.Enable();
-            _selectAction.performed += ctx => OnClick();
+            _selectAction.started += ctx => OnClick();
         }
 
         public void Update()
@@ -32,7 +34,8 @@ namespace Selector
 
             // Tạo một tia từ camera đi qua điểm chuột
             Ray ray = GetRay();
-
+            lineRenderer.SetPosition(0, ray.origin);
+            lineRenderer.SetPosition(1, ray.origin + ray.direction * 100);
             // Bắn raycast
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
@@ -69,7 +72,7 @@ namespace Selector
             }
         }
 
-        private void OnClick(){
+        public void OnClick(){
             if (_currentTrashCan != null){
                 //Debug.Log("Trash Can Selected " + _currentTrashCan.GetComponent<Trashcan>()._trashcanType + " " + Chapter3Manager.Instance.GetTopTrash());
                 Chapter3Manager.Instance.OnClickTrashCan(_currentTrashCan.GetComponent<Trashcan>());
