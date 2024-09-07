@@ -137,6 +137,17 @@ public class CapsuleControl : MonoBehaviour
         //Hiệu ứng nổ
     }
 
+    public void HardDisableCapsule()
+    {
+        StopAllCoroutines();
+        BreakCapsule();
+    }
+    public void HardEnableCapsule()
+    {
+        StopAllCoroutines();
+        RestoreCapsule();
+    }
+
     /// <summary>
     /// Hủy tất cả object bên trong capsule
     /// </summary>
