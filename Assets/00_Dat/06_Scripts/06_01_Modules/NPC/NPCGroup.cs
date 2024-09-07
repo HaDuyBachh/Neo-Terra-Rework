@@ -65,5 +65,20 @@ namespace NPC
                     npc.HideUnitCanvas();
                 });
         }
+
+        public void MoveNPCToSomeWhere()
+        {
+            var npc = Dequeue();
+            Vector3 randomPos = new Vector3(UnityEngine.Random.Range(-10, 10), 0, UnityEngine.Random.Range(-10, 10));
+            npc.MoveTo(randomPos, 
+                () => {
+                    npc.Despawn();
+                },
+                () => {
+                    Chapter3Manager.Instance.OnDecreaseProcessPoint();
+                    npc.HideUnitCanvas();
+                }
+            );
+        }
     }
 }

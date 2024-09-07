@@ -7243,14 +7243,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preInstantiate: 1
   completePercent: 0
-  maxNPCInQueue: 5
-  maxNPCInScene: 10
+  maxNPCInQueue: 1
+  maxNPCInScene: 3
   correctPoint: 10
   wrongPoint: 5
   npcSO: {fileID: 11400000, guid: 8b701daa80f62c244b7e89a67cc9fdea, type: 2}
   queuePivot: {fileID: 1636616108}
   player: {fileID: 698739812}
   hpBarController: {fileID: 1056266294}
+  levelPlay: 1
 --- !u!4 &874768428
 Transform:
   m_ObjectHideFlags: 0
@@ -9972,7 +9973,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9051264, g: 0.8668565, b: 0.9433962, a: 1}
+  m_Color: {r: 0.12547171, g: 0.11886794, b: 0.13207549, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -11300,6 +11301,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 120
   onTimeOut: {fileID: 0}
+  simpleEvent:
+    m_PersistentCalls:
+      m_Calls: []
   timeDisplay: {fileID: 1338280683}
 --- !u!1 &1663726238
 GameObject:
