@@ -3,6 +3,7 @@ using UnityEngine.AI;
 using TrashStorage;
 using UnityEngine.UI;
 using System;
+using Game.Manager;
 
 namespace NPC
 {
@@ -68,6 +69,13 @@ namespace NPC
                 _onCompleteMoving?.Invoke();
                 _onCompleteMoving = null;
             }
+            if(_isInQueue){
+                transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(Chapter3Manager.Instance.player.position - transform.position), Time.deltaTime * 10);
+            }
+        }
+
+        public void SetInQueue(bool value){
+            _isInQueue = value;
         }
 
         public void ShowUnitCanvas()

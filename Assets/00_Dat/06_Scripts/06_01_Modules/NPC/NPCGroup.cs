@@ -40,9 +40,14 @@ namespace NPC
                     i == 1 ?
                     () =>
                     {
+                        npc.SetInQueue(true);
                         npc.ShowUnitCanvas();
                     }
-                : null);
+                : () =>
+                {
+                    npc.SetInQueue(true);
+                    npc.HideUnitCanvas();
+                });
                 if (i >= _maxNPCInQueue)
                 {
                     break;
@@ -59,9 +64,10 @@ namespace NPC
                 {
                     onComplete?.Invoke();
                     npc.Despawn();
-                }, 
+                },
                 () =>
                 {
+                    npc.SetInQueue(false);
                     npc.HideUnitCanvas();
                 });
         }
@@ -70,11 +76,14 @@ namespace NPC
         {
             var npc = Dequeue();
             Vector3 randomPos = new Vector3(UnityEngine.Random.Range(-10, 10), 0, UnityEngine.Random.Range(-10, 10));
-            npc.MoveTo(randomPos, 
-                () => {
+            npc.MoveTo(randomPos,
+                () =>
+                {
                     npc.Despawn();
                 },
-                () => {
+                () =>
+                {
+                    npc.SetInQueue(false);
                     Chapter3Manager.Instance.OnDecreaseProcessPoint();
                     npc.HideUnitCanvas();
                 }
