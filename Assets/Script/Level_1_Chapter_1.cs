@@ -40,7 +40,7 @@ public class Level_1_Chapter_1 : MonoBehaviour, ILevelControl
         ResetTime();
         var pointHandler = FindAnyObjectByType<PointHandler>();
 
-        pointHandler.Rescale(10);
+        pointHandler.Rescale(5);
         pointHandler.updatePointEvent.AddListener(ResetTime);
         pointHandler.pointDoneEvent.AddListener(Done);
 
