@@ -473,7 +473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &33080732
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1024,6 +1024,7 @@ MonoBehaviour:
   gameplay3: "Scenes/M\xE0n 3"
   gameData: {fileID: 11400000, guid: f479cffe4d7dfc043b9116489a7d8c57, type: 2}
   processBar: {fileID: 966815020}
+  progressText: {fileID: 2030990727}
 --- !u!1 &174119367
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,6 +3970,8 @@ GameObject:
   - component: {fileID: 846303122}
   - component: {fileID: 846303121}
   - component: {fileID: 846303120}
+  - component: {fileID: 846303123}
+  - component: {fileID: 846303124}
   m_Layer: 0
   m_Name: TeleportGate
   m_TagString: Untagged
@@ -4046,6 +4049,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -67.377, y: 90, z: -0.029}
+--- !u!135 &846303123
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846303119}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: -0.00032584096, y: 0.023919066, z: 0.06672174}
+--- !u!114 &846303124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846303119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0027c2f2bf19130408a79719a4938aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _acceptPanel: {fileID: 0}
 --- !u!1 &858987826
 GameObject:
   m_ObjectHideFlags: 0
@@ -7252,6 +7289,7 @@ GameObject:
   - component: {fileID: 1656305394}
   - component: {fileID: 1656305396}
   - component: {fileID: 1656305395}
+  - component: {fileID: 1656305397}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -7318,6 +7356,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656305393}
   m_CullTransparentMesh: 1
+--- !u!114 &1656305397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656305393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27a9396e9183e14696391d6dee95cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshhold: 1
+  theshhold_delta: 0
+  _event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 154578794}
+        m_TargetAssemblyTypeName: Game.Manager.MenuSceneManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 154578794}
+        m_TargetAssemblyTypeName: Game.Manager.MenuSceneManager, Assembly-CSharp
+        m_MethodName: SetLevelDataGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1669079863
 GameObject:
   m_ObjectHideFlags: 0

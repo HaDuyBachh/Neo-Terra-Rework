@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using Data;
 using Core.GamePlay.Support;
 using UnityEngine.InputSystem;
+using TMPro;
 
 namespace Game.Manager
 {
@@ -17,8 +18,9 @@ namespace Game.Manager
         [Header("Scene Data")]
         public GameData gameData;
 
-        [Header("Scene Data")]
+        [Header("Scene Controll")]
         public HPBarController processBar;
+        public TMP_Text progressText;
 
         private InputAction _test;
 
@@ -34,6 +36,16 @@ namespace Game.Manager
                 SetLevelDataGame(1);
                 StartGame(3);
                 };
+        }
+
+        public void OnEnable(){
+            processBar.SetHP(gameData.process, 100);
+            if(gameData.process == 0){
+                progressText.text = "Démarrer le jeu";
+            }
+            else{
+                progressText.text = "Poursuivez votre progression à " + gameData.process + "%";
+            }
         }
 
         public void StartGame(int chapter)
