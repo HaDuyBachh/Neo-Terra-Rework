@@ -3970,7 +3970,7 @@ GameObject:
   - component: {fileID: 846303121}
   - component: {fileID: 846303120}
   m_Layer: 0
-  m_Name: Cube.031
+  m_Name: TeleportGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
