@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Data;
 public class SceneLevelControl : MonoBehaviour
 {
+    [SerializeField]
+    private GameData generalData;
     public int sceneID;
     public List<GameObject> levels;
 
@@ -28,6 +30,7 @@ public class SceneLevelControl : MonoBehaviour
 
     public void UsingLevel()
     {
-        UsingLevelId(FindAnyObjectByType<GeneralControl>().GeneralLevel);
+        //UsingLevelId(FindAnyObjectByType<GeneralControl>().GeneralLevel);
+        UsingLevelId(generalData.levelWillPlay);
     }    
 }

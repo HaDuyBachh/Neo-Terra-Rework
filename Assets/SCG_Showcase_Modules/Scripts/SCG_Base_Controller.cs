@@ -25,18 +25,18 @@ public class SCG_Base_Controller : MonoBehaviour
 	void Update ()
 	{
 	//Initialize components
-		mat01 = this.GetComponent<MeshRenderer>().sharedMaterials.GetValue(0) as Material;
-		mat02 = this.GetComponent<MeshRenderer>().sharedMaterials.GetValue(1) as Material;
-		textEditor = this.GetComponentInChildren<Text>();
-		pointLight = this.GetComponentInChildren<Light>();
+		//mat01 = this.GetComponent<MeshRenderer>().sharedMaterials.GetValue(0) as Material;
+		//mat02 = this.GetComponent<MeshRenderer>().sharedMaterials.GetValue(1) as Material;
+		//textEditor = this.GetComponentInChildren<Text>();
+		//pointLight = this.GetComponentInChildren<Light>();
 
 	//Do something
-		mat01.color = baseColor;
-		mat02.color = wallsColor; 
-		textEditor.text = baseText;
-		textEditor.color = textColor;
-		pointLight.color = lightColor;
-		pointLight.intensity = lightIntensity;
+		//mat01.color = baseColor;
+		//mat02.color = wallsColor; 
+		//textEditor.text = baseText;
+		//textEditor.color = textColor;
+		//pointLight.color = lightColor;
+		//pointLight.intensity = lightIntensity;
 	}
 
 	void OnRenderObject () 
