@@ -698,7 +698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Progress
+  m_text: "Principaux progr\xE8s"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9965e1b8c4a2a4e469b291408c8400cf, type: 2}
   m_sharedMaterial: {fileID: 8544980040763181841, guid: 9965e1b8c4a2a4e469b291408c8400cf,
@@ -726,7 +726,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.25
+  m_fontSize: 0.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
