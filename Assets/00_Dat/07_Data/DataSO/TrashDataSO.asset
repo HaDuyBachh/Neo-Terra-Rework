@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea90daf006c35e24983fd1f44924d75b, type: 3}
+  m_Name: TrashDataSO
+  m_EditorClassIdentifier: 
+  trashes:
+  - {fileID: 2034485580200399244, guid: 2aab398a5dac4ea46a5f09ac1478944b, type: 3}
+  - {fileID: 4471431080295469994, guid: a622196fcaba29d419f4e1ffebc8c8cc, type: 3}
+  - {fileID: 6084589430447745375, guid: c35ed56d177a84645ab2f75786ed348f, type: 3}
+  - {fileID: 3020320229031301402, guid: 862afe8f8c1186a40aeae5bb5be42118, type: 3}
+  - {fileID: 7989825156112634225, guid: ed784a86860672c45895ed062e493984, type: 3}
+  - {fileID: 6505622561528600235, guid: dfe1d6b2f776eec41997526b7ab3b8bf, type: 3}
+  - {fileID: 8285649556836786814, guid: a02833486d6dcd14b95ab5910ad34dcc, type: 3}
+  - {fileID: 3421314931944448835, guid: 2b19317ba01a7704f8826b23066b6674, type: 3}
+  - {fileID: 3398612409094170810, guid: 1d4428013701f4545afc0d1d14bd1181, type: 3}
+  - {fileID: 7714426912284841010, guid: bf927186c5fc32d43844e111e693499c, type: 3}
+  - {fileID: -6734010598382632298, guid: 3cdb05e391000cf4f8d5e8e7b0a22823, type: 3}
+  - {fileID: 2909405497710536817, guid: d9d814ad647b9c6429a94761ac0c7ee7, type: 3}
+  - {fileID: 1201057759507597840, guid: 120c353560fe7954ebf0eeb4c6aee08f, type: 3}
+  - {fileID: -6449304523168336276, guid: 7b035d44fa02c2449bba87dd68e86c25, type: 3}
+  - {fileID: -6449304523168336276, guid: 26c791cd522c09a4183225d3e0ea01d1, type: 3}
+  - {fileID: 2855565958220962504, guid: 8ed07794cbd918a4fa71233dac16ace7, type: 3}
+  - {fileID: 4907173382412255379, guid: 19b216dac61466847a081662bcebce39, type: 3}
+  - {fileID: 3457257300816883428, guid: e91f97f7a44c7e34cae62328378b7032, type: 3}
+  - {fileID: 7072188553776955898, guid: ffa99b3a30abeaf46ae15e793b66dde1, type: 3}
+  - {fileID: 7084265407722393196, guid: 266c024701fd49e4c9f10c6beb84f070, type: 3}
+  - {fileID: -2971918813691338555, guid: ea523666abc05c447ade70676da2ad12, type: 3}
+  - {fileID: 97683016963196355, guid: 3c9d243e135e15b4bbfaa6176f0a3813, type: 3}
+  - {fileID: -1649193485813941797, guid: 0fe5aa998b3eb754b9b2c6466a9c02ae, type: 3}
+  - {fileID: 1195719862847039946, guid: d00f1284e9378ff40a550f32cc6f0567, type: 3}
+  - {fileID: 5555433173287280013, guid: 6083a8c6772c01b4691cada1b792edcc, type: 3}
+  - {fileID: -6642243805913558492, guid: 64c80cd197dd6304eab667bd93873244, type: 3}
+  - {fileID: 7164772283047638224, guid: e7211396207796e4fbe4d525e154ca9f, type: 3}
+  - {fileID: -4685133615640303340, guid: df5334ef136eed34e8be88fb33cf388e, type: 3}
+  - {fileID: 8644175143549911679, guid: 4e6e4a2f1f029294fa5dc104aafad7bd, type: 3}
+  - {fileID: 5245874936672925519, guid: 9dc9d96e80f66734b846111d35db6c26, type: 3}
+  - {fileID: 2132171159704582823, guid: c88fe8c6829d2c34f8406dac7e6f14a2, type: 3}
+  - {fileID: -9143005765923375596, guid: 3e4b44d842ef26c41bfb9ee2a4f6d298, type: 3}
+  - {fileID: 2727939005950385406, guid: bab5c67eef435634f893e9237d5ff76e, type: 3}
+  - {fileID: 5503675442395221047, guid: d30ac563df8fc704c82150616c642e04, type: 3}
+  - {fileID: 722013623721903205, guid: 753e430ba97f66448900d1b08060167a, type: 3}
+  - {fileID: 8969002669359546150, guid: d2d38b808b3b2b94182ba028c679ef57, type: 3}
+  - {fileID: 1853234517444265096, guid: 91968cf116333f249bb6f13d500e3b68, type: 3}
+  trashDataPath: Assets/NeoTerra/Assets/Prefabs/Trash PreFabs Complete

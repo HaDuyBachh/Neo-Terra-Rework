@@ -6,6 +6,7 @@ public class Trashcan : MonoBehaviour
 {
     public Trash.Type _trashcanType;
     public PointHandler pointHandler;
+    public Transform standPivot;
 
     public void Start()
     {
