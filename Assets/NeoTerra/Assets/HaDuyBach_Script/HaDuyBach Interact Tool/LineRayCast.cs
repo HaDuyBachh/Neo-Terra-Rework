@@ -18,6 +18,7 @@ public class LineRayCast : MonoBehaviour
         handInput.primaryPressEvent.AddListener(TurnOnOff);
         handInput.activePressEvent.AddListener(GetRayCast);
     }
+    
     public bool GetTrashFromHit(out Trash trashObj)
     {
         return hit.Value.collider.transform.parent.TryGetComponent(out trashObj);
@@ -66,7 +67,7 @@ public class LineRayCast : MonoBehaviour
         else
             lineCastMode = 0;
 
-        ShowScreen(lineCastMode-1);
+        ShowScreen(lineCastMode - 1);
     }
     // Update is called once per frame
     void Update()
@@ -83,5 +84,17 @@ public class LineRayCast : MonoBehaviour
             line.SetPosition(1, lineOrigin.position + lineOrigin.forward.normalized * 100);
         }
 
+    }
+
+    void Select()
+    {
+        if(Physics.Raycast(new Ray(lineOrigin.position, lineOrigin.forward), out var hit))
+        {   
+            this.hit = hit;
+            if (hit.transform.TryGetComponent<VRButtonControl>(out var button))
+            {
+                button._event.Invoke();
+            }
+        }
     }
 }
