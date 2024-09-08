@@ -52,9 +52,9 @@ namespace Game.GameManager
         public void SpawnTrashLine()
         {
             var cnt = Random.Range(-2, _trashSpawnCount);
-            if (_trashCanThrowCount == 0)
+            if (_trashCanThrowCount <= 2)
             {
-                cnt = 8;
+                cnt = 10;
                 Debug.Log("đã hết rác đang, thêm mới ");
             }
 

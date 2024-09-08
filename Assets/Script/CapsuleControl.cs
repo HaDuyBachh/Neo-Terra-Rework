@@ -31,7 +31,6 @@ public class CapsuleControl : MonoBehaviour
         var p = other.transform.parent;
         if (p != null && p.gameObject.CompareTag("trash"))
         {
-
             p.GetComponent<Rigidbody>().useGravity = false;
             p.GetComponent<Rigidbody>().velocity = Vector3.zero;
             p.GetComponentInChildren<Collider>().enabled = false;
@@ -89,6 +88,12 @@ public class CapsuleControl : MonoBehaviour
         }
     }
 
+    public void SetUpCapsuleType(Trash.Type type)
+    {
+        this.type = type;
+        UpdateMaterial((int)type);
+    }    
+
     /// <summary>
     /// Cập nhật Material của capsule
     /// </summary>
@@ -130,6 +135,17 @@ public class CapsuleControl : MonoBehaviour
         DestroyAll();
         UpdateMaterial(6);
         //Hiệu ứng nổ
+    }
+
+    public void HardDisableCapsule()
+    {
+        StopAllCoroutines();
+        BreakCapsule();
+    }
+    public void HardEnableCapsule()
+    {
+        StopAllCoroutines();
+        RestoreCapsule();
     }
 
     /// <summary>

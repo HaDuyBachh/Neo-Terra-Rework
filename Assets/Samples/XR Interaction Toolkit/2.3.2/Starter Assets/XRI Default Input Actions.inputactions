@@ -2106,13 +2106,13 @@
             ]
         },
         {
-            "name": "XR RightHand Button Controller",
-            "id": "cab0fbeb-26af-4f92-b68e-d95bcbce6878",
+            "name": "XR LeftHand Button Controller",
+            "id": "a63bd638-3848-4654-bef7-2959fe16d7eb",
             "actions": [
                 {
                     "name": "Primary Button Press",
                     "type": "Button",
-                    "id": "4518521d-f99e-444c-b393-a4f63cd97584",
+                    "id": "0208e8d9-2fcd-4cdf-a962-a21ffd49ac6f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -2121,7 +2121,7 @@
                 {
                     "name": "Secondary Button Press",
                     "type": "Button",
-                    "id": "15ca7fbd-c9a2-4d37-a9e6-44a688abd8c3",
+                    "id": "33030b04-5d1d-4ea4-9e57-4ffb1437c7d6",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -2131,8 +2131,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "d47d3cd0-9f91-4030-8aa8-f58f7da57553",
-                    "path": "<XRController>{RightHand}/primaryButton",
+                    "id": "2fde14f2-04e2-4efd-8490-6921adaf4d92",
+                    "path": "<XRController>{LeftHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -2142,7 +2142,7 @@
                 },
                 {
                     "name": "",
-                    "id": "81f6f475-7edd-4f0f-8971-33e6c412b467",
+                    "id": "2e48a864-525b-4bd2-af62-2c887510f12d",
                     "path": "<XRController>{RightHand}/secondaryButton",
                     "interactions": "",
                     "processors": "",
@@ -2154,13 +2154,13 @@
             ]
         },
         {
-            "name": "XR LefttHand Button Controller",
-            "id": "fd98e2ce-4bc2-41a7-bfe1-8710a4870c6f",
+            "name": "XR RightHand Button Controller",
+            "id": "769df113-e898-477f-ba5b-d46751e40d8a",
             "actions": [
                 {
                     "name": "Primary Button Press",
                     "type": "Button",
-                    "id": "3775ed3c-066d-4531-9449-4353dcfd4a97",
+                    "id": "56a4be78-0c72-4703-a3dd-47085e15df10",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -2169,7 +2169,7 @@
                 {
                     "name": "Secondary Button Press",
                     "type": "Button",
-                    "id": "e4149754-92f0-4b5e-8946-c197537d77be",
+                    "id": "487ce5a7-29dc-4c67-9cb3-a3ef0507b400",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -2179,8 +2179,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "cc379bf9-ca5e-4bae-8319-6c405dde3828",
-                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "id": "1c4e7b06-9d35-49df-b639-0b51bad95be1",
+                    "path": "<XRController>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -2190,8 +2190,8 @@
                 },
                 {
                     "name": "",
-                    "id": "d8f59b61-ec12-4b96-86da-d0a12cc0b40d",
-                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "id": "50e5d1ef-3357-457f-9e71-8e6fe53a0336",
+                    "path": "<XRController>{RightHand}/secondaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

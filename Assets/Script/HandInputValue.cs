@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,11 +16,12 @@ public class HandInputValue : MonoBehaviour
     private InputActionProperty primaryButtonAction;
     [SerializeField]
     private InputActionProperty secondaryButtonAction;
-
+ 
     public UnityEvent primaryPressEvent;
     public UnityEvent secondaryPressEvent;
     public UnityEvent activePressEvent;
     public UnityEvent selectPressEvent;
+    public UnityEvent snapTurnEvent;
 
     public float triggerValue
     {
@@ -44,27 +45,20 @@ public class HandInputValue : MonoBehaviour
     }
     private void OnEnable()
     {
-        if (primaryButtonAction != null) primaryButtonAction.action.started += PrimaryPress;
-        if (secondaryButtonAction != null) secondaryButtonAction.action.started += SecondaryPress;
-        if (activeAction != null) activeAction.action.started += ActivePress;
-        if (selectAction != null) selectAction.action.started += SelectPress;
+        primaryButtonAction.action.started += PrimaryPress;
+        secondaryButtonAction.action.started += SecondaryPress;
+        activeAction.action.started += ActivePress;
+        turnAction.action.performed += SnapTurnPress;
+        turnAction.action.canceled += SnapTurnPress;
     }
     private void OnDisable()
     {
-        if (primaryButtonAction != null) primaryButtonAction.action.started -= PrimaryPress;
-        if (secondaryButtonAction != null) secondaryButtonAction.action.started -= SecondaryPress;
-        if (activeAction != null) activeAction.action.started -= ActivePress;
-        if (selectAction != null) selectAction.action.started -= SelectPress;
-    }  
+        primaryButtonAction.action.started -= PrimaryPress;
+        secondaryButtonAction.action.started -= SecondaryPress;
+        activeAction.action.started -= ActivePress;
+        turnAction.action.performed -= SnapTurnPress;
+    }
 
-    private void SelectPress(InputAction.CallbackContext obj)
-    {
-        selectPressEvent.Invoke();
-    }    
-    private void ActivePress(InputAction.CallbackContext obj)
-    {
-        activePressEvent.Invoke();
-    }    
     private void PrimaryPress(InputAction.CallbackContext obj)
     {
         primaryPressEvent.Invoke();
@@ -73,4 +67,12 @@ public class HandInputValue : MonoBehaviour
     {
         secondaryPressEvent.Invoke();
     }
+    private void ActivePress(InputAction.CallbackContext obj)
+    {
+        activePressEvent.Invoke();
+    }  
+    private void SnapTurnPress(InputAction.CallbackContext obj)
+    {
+        snapTurnEvent.Invoke();
+    }    
 }

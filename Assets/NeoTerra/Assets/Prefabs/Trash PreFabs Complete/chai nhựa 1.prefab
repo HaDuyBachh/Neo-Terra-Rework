@@ -158,6 +158,7 @@ MonoBehaviour:
   trashImage: {fileID: 2800000, guid: 215f9e5b284b8aa4684b3b2e80615806, type: 3}
   _type: 1
   _point: 2
+  canThrow: 1
 --- !u!54 &6420510847752482703
 Rigidbody:
   m_ObjectHideFlags: 0

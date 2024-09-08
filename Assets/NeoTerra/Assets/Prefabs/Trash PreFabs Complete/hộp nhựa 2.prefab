@@ -223,6 +223,7 @@ MonoBehaviour:
   trashImage: {fileID: 2800000, guid: 0d472a8c7ce1f374fba9d54c58a1ab7b, type: 3}
   _type: 1
   _point: 2
+  canThrow: 1
 --- !u!1 &1921872564412566776
 GameObject:
   m_ObjectHideFlags: 0

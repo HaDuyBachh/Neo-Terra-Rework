@@ -10,6 +10,7 @@ TagManager:
   - trash
   - player
   - trashIcon
+  - trashAndCanIcon
   layers:
   - Default
   - TransparentFX

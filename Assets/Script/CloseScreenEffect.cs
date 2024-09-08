@@ -16,7 +16,7 @@ public class CloseScreenEffect : MonoBehaviour
     private bool isOpen = false;
     [SerializeField]
     private bool first = false;
-    private void Start()
+    private void Awake()
     {
         originScale = new();
         for (int i = 0; i < target.Count; i++)
@@ -46,6 +46,28 @@ public class CloseScreenEffect : MonoBehaviour
         isOpen = true;
         first = true;
     }
+    public void CloseAfter(float time)
+    {
+        StopAllCoroutines();
+        StartCoroutine(CloseAfterMinute(time));
+    }
+    public IEnumerator CloseAfterMinute(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Close();
+    }
+
+    public void OpenAfter(float time)
+    {
+        StopAllCoroutines();
+        StartCoroutine(OpenAfterMinute(time));
+    }
+    public IEnumerator OpenAfterMinute(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Open();
+    }    
+
     public void Update()
     {
         if (isClose)
@@ -53,6 +75,17 @@ public class CloseScreenEffect : MonoBehaviour
         if (isOpen)
             Opening();
     }
+    public void Closeimmediately()
+    {
+        foreach (var _o in obj) _o.SetActive(false);
+        for (int i = 0; i < target.Count; i++)
+        {
+            var sc = target[i].localScale;
+            sc = new Vector3(sc.x, 0, sc.z);
+            target[i].localScale = sc;
+            target[i].gameObject.SetActive(false);
+        }
+    }    
     private void Closing()
     {
         if (first)
