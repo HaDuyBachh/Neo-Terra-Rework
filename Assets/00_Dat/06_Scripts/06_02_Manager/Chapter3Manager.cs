@@ -2,6 +2,7 @@ using NPC;
 using UnityEngine;
 using Singleton;
 using Core.GamePlay.Support;
+using Data;
 
 namespace Game.Manager
 {
@@ -19,6 +20,8 @@ namespace Game.Manager
         public Transform queuePivot;
         public Transform player;
         public HPBarController hpBarController;
+        public GameData gameData;
+
         public int levelPlay = 1;
 
         private int _currentPoint = 0;
@@ -35,7 +38,7 @@ namespace Game.Manager
             npcSO.Init(0);
             for (int i = 0; i < maxNPCInScene; i++)
             {
-                npcSO.Spawn();
+                npcSO.Spawn(gameData.levelWillPlay);
             }
         }
 
@@ -44,7 +47,7 @@ namespace Game.Manager
             npcSO.Init(0);
             for (int i = 0; i < maxNPCInScene; i++)
             {
-                npcSO.Spawn();
+                npcSO.Spawn(gameData.levelWillPlay);
             }
         }
 

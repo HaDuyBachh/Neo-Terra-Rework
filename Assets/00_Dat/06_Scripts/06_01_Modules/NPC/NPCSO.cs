@@ -8,10 +8,10 @@ namespace NPC{
         public NPCGroup npcGroup;
         public TrashDataSO trashDatas;
 
-        public void Spawn(){
+        public void Spawn(int level){
             var npc = SpawnObject().GetComponent<NPCController>();
             var randomPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-            npc.Init(this, randomPosition);
+            npc.Init(this, randomPosition, level);
         }
     }
 }

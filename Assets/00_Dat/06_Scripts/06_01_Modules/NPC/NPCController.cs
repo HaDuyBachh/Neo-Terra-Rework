@@ -12,14 +12,16 @@ namespace NPC
         [SerializeField] private GameObject _unitCanvas;
         [SerializeField] private Image _trashImage;
         [SerializeField] private Animator _animator;
+        [SerializeField] private GameObject _timeCounter;
 
         private Trash _data;
         private NPCGroup _group;
         private Action _onCompleteMoving;
         private NPCSO _npcSO;
         private bool _isInQueue;
+        private int _level;
 
-        public void Init(NPCSO _so, Vector3 position)
+        public void Init(NPCSO _so, Vector3 position, int level)
         {
             _npcSO = _so;
             _group = _so.npcGroup;
@@ -30,12 +32,22 @@ namespace NPC
 
             _animator.SetBool("IsMove", false);
             _animator.SetBool("IsIdle", true);
+
+            if (level > 1)
+            {
+                _timeCounter.SetActive(true);
+            }
+            else
+            {
+                _timeCounter.SetActive(false);
+            }
+            _level = level;
         }
 
         public void Despawn()
         {
             _npcSO.DespawnObject(gameObject);
-            _npcSO.Spawn();
+            _npcSO.Spawn(_level);
         }
 
         public void MoveTo(Vector3 position, Action completeMovingCallback = null, Action startMovingCallback = null)
