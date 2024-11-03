@@ -17,6 +17,9 @@ public class GeminiRecyclingModule : MonoBehaviour
     private const string prompt = "Qu'est-ce que c'est ? Comment dois-je recycler ? Que peut-il devenir après recyclage ? Réponse courte";
     private const string prompt1 = "Qu'est-ce que c'est ? Quelle est la traduction en vietnamien ? Réponds la plus courte possible !";
 
+    //Test Input with Text
+    public string inputText;
+
     // Output text property
     public string OutputText;
 
@@ -70,31 +73,54 @@ public class GeminiRecyclingModule : MonoBehaviour
 
             var jsonRequest = ConvertToJson(request);
 
+            // Log the request
+            Debug.Log($"Request: {jsonRequest}");
 
 
-            // var jsonRequest = @"
-            // {
-            //     ""contents"": [
-            //         {
-            //             ""parts"": [
-            //                 {
-            //                     ""text"": ""Qu'est-ce que c'est? Comment dois-je recycler ? Que peut-il devenir après recyclage ? Réponse courte""
-            //                 },
-            //                 {
-            //                     ""inlineData"": {
-            //                         ""mimeType"": ""image/png"",
-            //                         ""data"": """ + InputImageBase64 + @"""
-            //                     }
-            //                 }
-            //             ]
-            //         }
-            //     ]
-            // }";
+            // Make API request
+            var response = await client.PostAsync(requestUrl, new StringContent(/*JsonUtility.ToJson(request)*/jsonRequest, Encoding.UTF8, "application/json"));
 
-            //request = "{\"contents\":[{\"parts\":[{\"text\":\"Qu'est-ce que c'est? Comment dois-je recycler ? Que peut-il devenir après recyclage ? Réponse courte\",\"inlineData\":{\"mimeType\":\"image/png\",\"data\":\"" + InputImageBase64 + "\"}}]}]}
 
-            // Serialize the request to JSON
-            // var jsonRequest = JsonUtility.ToJson(request);
+            // Log the response
+            var responseContent = await response.Content.ReadAsStringAsync();
+            Debug.Log($"Response: {responseContent}");
+
+            // Process response
+            if (response.IsSuccessStatusCode)
+            {
+                var result = JsonUtility.FromJson<Response>(responseContent);
+                return result.candidates[0].content.parts[0].text;
+            }
+            else
+            {
+                throw new Exception($"API request failed with status code {response.StatusCode}");
+            }
+        }
+    }
+
+    public async Task<string> ProcessStringAsync(string question)
+    {
+        using (var client = new HttpClient())
+        {
+
+            var request = new Root
+            {
+                contents = new List<Content>
+                {
+                    new Content
+                    {
+                        parts = new Part[]
+                        {
+                            new Part
+                            {
+                                text = question
+                            }
+                        }
+                    }
+                }
+            };
+
+            var jsonRequest = ConvertToJson(request);
 
             // Log the request
             Debug.Log($"Request: {jsonRequest}");
@@ -152,6 +178,12 @@ public class GeminiRecyclingModule : MonoBehaviour
         texture.Apply();
         return texture;
     }
+
+    public async void Test()
+    {
+        string result = await ProcessStringAsync(inputText);
+        Debug.Log(result);
+    }
 }
 
 [Serializable]
@@ -196,4 +228,17 @@ public class Candidate
 public class Response
 {
     public Candidate[] candidates;
+}
+
+[UnityEditor.CustomEditor(typeof(GeminiRecyclingModule))]
+public class RecyclingModuleEditor : UnityEditor.Editor{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        if(GUILayout.Button("Process"))
+        {
+            GeminiRecyclingModule module = (GeminiRecyclingModule)target;
+            module.Test();
+        }
+    }
 }

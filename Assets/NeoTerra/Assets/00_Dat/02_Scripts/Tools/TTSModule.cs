@@ -6,6 +6,7 @@ using System.IO;
 
 public class TTSModule : MonoBehaviour
 {
+    public string inputText;
     public AudioSource audioSource;
 
     [Serializable]
@@ -106,4 +107,15 @@ public class TTSModule : MonoBehaviour
     }
 
     public bool IsComplete {get; private set;}
+}
+
+[UnityEditor.CustomEditor(typeof(TTSModule))]
+public class TTSModuleEditor : UnityEditor.Editor{
+    public override void OnInspectorGUI(){
+        DrawDefaultInspector();
+        TTSModule ttsModule = (TTSModule)target;
+        if(GUILayout.Button("Speak Text")){
+            ttsModule.SpeakText(ttsModule.inputText);
+        }
+    }
 }
