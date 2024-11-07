@@ -113,7 +113,7 @@ public class GeminiRecyclingModule : MonoBehaviour
                         {
                             new Part
                             {
-                                text = question
+                                text = question + " Trả lời trong vòng 50 từ"
                             }
                         }
                     }
