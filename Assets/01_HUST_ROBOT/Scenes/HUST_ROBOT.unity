@@ -469,7 +469,7 @@ MonoBehaviour:
   LeftReleaseLabel: Release to load
   RightPullLabel: Pull to refresh
   RightReleaseLabel: Release to load
-  IsPullTop: 1
+  IsPullTop: 0
   IsPullBottom: 1
   IsPullLeft: 1
   IsPullRight: 1

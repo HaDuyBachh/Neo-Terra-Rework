@@ -109,6 +109,7 @@ public class TTSModule : MonoBehaviour
     public bool IsComplete {get; private set;}
 }
 
+#if UNITY_EDITOR
 [UnityEditor.CustomEditor(typeof(TTSModule))]
 public class TTSModuleEditor : UnityEditor.Editor{
     public override void OnInspectorGUI(){
@@ -119,3 +120,4 @@ public class TTSModuleEditor : UnityEditor.Editor{
         }
     }
 }
+#endif

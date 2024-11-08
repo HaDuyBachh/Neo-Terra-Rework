@@ -544,7 +544,7 @@ namespace UIS {
                 var pos = (Type == 0) ? vector.y : vector.x;
                 var index = Mathf.RoundToInt(_count * (1.0f - pos));
                 ScrollTo(index);
-            }            
+            }
             if (Type == 0) {
                 ScrollChangeVertical();
             } else {

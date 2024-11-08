@@ -230,6 +230,8 @@ public class Response
     public Candidate[] candidates;
 }
 
+
+#if UNITY_EDITOR
 [UnityEditor.CustomEditor(typeof(GeminiRecyclingModule))]
 public class RecyclingModuleEditor : UnityEditor.Editor{
     public override void OnInspectorGUI()
@@ -242,3 +244,4 @@ public class RecyclingModuleEditor : UnityEditor.Editor{
         }
     }
 }
+#endif
