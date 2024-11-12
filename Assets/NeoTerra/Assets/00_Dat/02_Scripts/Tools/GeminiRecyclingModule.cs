@@ -11,11 +11,11 @@ using UnityEngine;
 public class GeminiRecyclingModule : MonoBehaviour
 {
     // API Key and URL
-    // private const string ApiKey = "AIzaSyB6IdAQgvMgEVbUC7CBsreRvO09BaDAfgU";
-    // private const string Url = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=";
+    private const string ApiKey = "";
+    private const string Url = "";
 
-    // private const string ChatGPTKey = "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";
-    // private const string ChatGPTUrl = "https://api.openai.com/v1/chat/completions";
+    private const string ChatGPTKey = "";
+    private const string ChatGPTUrl = "";
 
     private const string prompt = "trả lời theo dạng json sau: { \"value\" : \"String\", \"type\"  : \"Angry\" } với value là câu trả lời câu hỏi dưới đây (trả lời trong 30 từ), type là ngữ điệu của robot khi trả lời (bạn hãy tự xem xét và chọn type trong các type sau : HandWave (Vẫy tay xin chào), HeadShake (lắc đầu từ chối), Nod (gật đầu đồng ý), Angry (tức giận), Explain (Giải thích câu hỏi) Câu hỏi: ";
     private readonly string requestUrl = ChatGPTUrl;
