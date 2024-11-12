@@ -1,5 +1,6 @@
-public class BadResponeState : BaseState
+public class ResponeState : BaseState
 {
+    public TypeState typeState;
     public BaseState idleState;
     
     public void CompleteResponse()

@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class GeminiRecyclingModule : MonoBehaviour
@@ -10,11 +13,16 @@ public class GeminiRecyclingModule : MonoBehaviour
     // API Key and URL
     private const string ApiKey = "AIzaSyB6IdAQgvMgEVbUC7CBsreRvO09BaDAfgU";
     private const string Url = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=";
-    private readonly string requestUrl = Url + ApiKey;
+
+    private const string ChatGPTKey = "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";
+    private const string ChatGPTUrl = "https://api.openai.com/v1/chat/completions";
+
+    private const string prompt = "trả lời theo dạng json sau: { \"value\" : \"String\", \"type\"  : \"Angry\" } với value là câu trả lời câu hỏi dưới đây (trả lời trong 30 từ), type là ngữ điệu của robot khi trả lời (bạn hãy tự xem xét và chọn type trong các type sau : HandWave (Vẫy tay xin chào), HeadShake (lắc đầu từ chối), Nod (gật đầu đồng ý), Angry (tức giận), Explain (Giải thích câu hỏi) Câu hỏi: ";
+    private readonly string requestUrl = ChatGPTUrl;
 
     private Texture2D compressedTexture;
 
-    private const string prompt = "Qu'est-ce que c'est ? Comment dois-je recycler ? Que peut-il devenir après recyclage ? Réponse courte";
+    //private const string prompt = "Qu'est-ce que c'est ? Comment dois-je recycler ? Que peut-il devenir après recyclage ? Réponse courte";
     private const string prompt1 = "Qu'est-ce que c'est ? Quelle est la traduction en vietnamien ? Réponds la plus courte possible !";
 
     //Test Input with Text
@@ -76,25 +84,8 @@ public class GeminiRecyclingModule : MonoBehaviour
             // Log the request
             Debug.Log($"Request: {jsonRequest}");
 
-
-            // Make API request
-            var response = await client.PostAsync(requestUrl, new StringContent(/*JsonUtility.ToJson(request)*/jsonRequest, Encoding.UTF8, "application/json"));
-
-
-            // Log the response
-            var responseContent = await response.Content.ReadAsStringAsync();
-            Debug.Log($"Response: {responseContent}");
-
-            // Process response
-            if (response.IsSuccessStatusCode)
-            {
-                var result = JsonUtility.FromJson<Response>(responseContent);
-                return result.candidates[0].content.parts[0].text;
-            }
-            else
-            {
-                throw new Exception($"API request failed with status code {response.StatusCode}");
-            }
+            // Make API request with retry mechanism
+            return await SendRequestWithRetry(client, new StringContent(jsonRequest, Encoding.UTF8, "application/json"));
         }
     }
 
@@ -102,51 +93,75 @@ public class GeminiRecyclingModule : MonoBehaviour
     {
         using (var client = new HttpClient())
         {
-
-            var request = new Root
+            // Cấu trúc request theo ChatGPT API
+            var request = new
             {
-                contents = new List<Content>
+                model = "gpt-3.5-turbo",
+                messages = new List<object>
                 {
-                    new Content
-                    {
-                        parts = new Part[]
-                        {
-                            new Part
-                            {
-                                text = question + " Trả lời trong vòng 50 từ"
-                            }
-                        }
-                    }
+                    new { role = "system", content = "You are a helpful assistant." },
+                    new { role = "user", content = question }
                 }
             };
 
-            var jsonRequest = ConvertToJson(request);
+            var jsonRequest = JsonConvert.SerializeObject(request);
 
-            // Log the request
+            // Log request
             Debug.Log($"Request: {jsonRequest}");
 
+            // Thêm API key vào header
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {ChatGPTKey}");
+            return await SendRequestWithRetry(client, new StringContent(jsonRequest, Encoding.UTF8, "application/json"));
+        }
+    }
 
-            // Make API request
-            var response = await client.PostAsync(requestUrl, new StringContent(/*JsonUtility.ToJson(request)*/jsonRequest, Encoding.UTF8, "application/json"));
+    private async Task<string> SendRequestWithRetry(HttpClient client, StringContent content, int maxRetries = 3)
+    {
+        int retryCount = 0;
 
-
-            // Log the response
+        while (retryCount < maxRetries)
+        {
+            var response = await client.PostAsync(requestUrl, content);
             var responseContent = await response.Content.ReadAsStringAsync();
             Debug.Log($"Response: {responseContent}");
 
-            // Process response
             if (response.IsSuccessStatusCode)
             {
-                var result = JsonUtility.FromJson<Response>(responseContent);
-                return result.candidates[0].content.parts[0].text;
+                // Deserialize response JSON
+                var result = JsonConvert.DeserializeObject<Response>(responseContent);
+                return result.choices[0].message.content;
+            }
+            else if (response.StatusCode == (HttpStatusCode)429) // Quá nhiều request
+            {
+                retryCount++;
+                int delay = (int)Math.Pow(2, retryCount) * 1000; // Exponential backoff
+                Debug.LogWarning($"Quota exceeded. Retrying in {delay / 1000} seconds...");
+                await Task.Delay(delay);
             }
             else
             {
                 throw new Exception($"API request failed with status code {response.StatusCode}");
             }
         }
+        return "Có vấn đề khi trong quá trình xử lý câu hỏi. Bạn hãy thử lại sau nhé";
     }
 
+    // Các lớp dữ liệu cho response
+    private class Response
+    {
+        public List<Choice> choices { get; set; }
+    }
+
+    private class Choice
+    {
+        public Message message { get; set; }
+    }
+
+    private class Message
+    {
+        public string role { get; set; }
+        public string content { get; set; }
+    }
     public string ConvertToJson(Root root)
     {
         StringBuilder sb = new StringBuilder();
